@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, intial-scaling=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="/static/sty.css">
+        <title>Car Number Plate Detector</title>
+    </head>
+    <body>
+        <div class='navbar'>
+            <h1>Car Number Plate Detector & Extractor</h1>
+        </div>
+    
+        <div class="container">
+            <label for="capture">Select Photo : </label>
+            <input type="file" id='capture' name='file' accept="image/*" capture>
+            <div class="image">
+                <img src='' id='img' alt='' class="rounded">
+            </div>
+            <button type="submit" class="btn btn-primary">Detect</button> 
+        </div>
+    
+    </body>
+    <footer>
+        <div class="footer">
+            <div class = 'row'>
+                <div class = 'col'>
+                    <a href="https://github.com/Dev-Khant" target="_blank">Github</a>
+                </div>
+                <div class = 'col'>
+                    <a href="https://www.kaggle.com/devkhant24" target="_blank">Kaggle</a>
+                </div>
+                <div class = 'col'>
+                    <a href="https://www.linkedin.com/in/devkhant/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function validate()
+        {
+            var a = document.getElementById('capture').value;
+            if(a=='')
+            {
+                alert('Upload an Image')
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function (){
+            let form = document.getElementById('myform');
+            let input = document.getElementById('capture');
+
+            input.addEventListener('change', function (){
+                let img = document.getElementById('img');
+                img.src = window.URL.createObjectURL(input.files[0]);
+
+            })
+        })
+        
+</script>
+</html>
