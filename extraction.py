@@ -9,10 +9,24 @@ def crop_and_extract(img, boxes):
     for i, box in enumerate(boxes):
         box[2] = box[0] + box[2]
         box[3] = box[1] + box[3]
-        im = img.crop(box)  
-        im.save(f'frame_{i}.png')
+        img = img.crop(box)  
+        img = np.array(img)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        
+        gray = cv2.resize(img, None, fx = 3, fy = 3, interpolation = cv2.INTER_CUBIC)
+        blur = cv2.GaussianBlur(gray, (5,5), 0)
+        gray = cv2.medianBlur(gray, 3)
+        ret, thresh = cv2.threshold(blur, 0, 255, cv2.THRESH_OTSU | cv2.THRESH_BINARY_INV)
+        rect_kern = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3)) 
+        dilation = cv2.dilate(thresh, rect_kern, iterations = 1)
 
-    reader = easyocr.Reader(["en"])
-    result = reader.readtext('frame_0.png')
+        cv2.imwrite('dilation.png', dilation)
 
-    return result if (len(result) != 0) else 'Number not clearly visible'
+        reader = easyocr.Reader(["en"])
+        result = reader.readtext('dilation.png')
+        for i in result:
+            if i[1] == 'IND':
+                continue
+            print(i[1].replace('',' '), end=' ')
+            
+        print('\n')
