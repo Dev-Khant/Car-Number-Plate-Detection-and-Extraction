@@ -2,7 +2,6 @@ import os
 import numpy as np
 import cv2
 from PIL import Image
-import tensorflow as tf
 from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 from flask import Flask, render_template, request, jsonify, session

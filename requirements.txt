@@ -1,0 +1,6 @@
+numpy==1.23.0
+flask==2.1.2
+werkzeug==2.1.2
+jinja2==3.0.3
+gunicorn==20.0.4
+pil==2.6.0
