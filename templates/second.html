@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, intial-scaling=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='sty2.css') }}">
+        <link rel="icon" type="image/png" href="{{ url_for('static' , filename='favicon.png') }}"/>
+        <title>Car Number Plate Detector</title>
+    </head>
+    <body>
+        <form action="{{ url_for('predict') }}" id='myform' method="POST"></form>
+            <div class='navbar'>
+                <h1>Car Number Plate Detector & Extractor</h1>
+            </div>
+        
+            <div class="extracted-image">
+                <h3>Processed Image</h3>
+                <div class="image">
+                    <img src= "{{ image_path }}" id='img' class="rounded">
+                </div>
+            </div>
+
+            <div class="plate-number">
+                <h3>Extracted Number</h3>
+                <p>{{ prediction_text }}</p>
+            </div>
+        </form>
+    </body>
+    <footer>
+        <div class="footer">
+            <div class = 'row'>
+                <div class = 'col'>
+                    <a href="https://github.com/Dev-Khant" target="_blank">Github</a>
+                </div>
+                <div class = 'col'>
+                    <a href="https://www.kaggle.com/devkhant24" target="_blank">Kaggle</a>
+                </div>
+                <div class = 'col'>
+                    <a href="https://www.linkedin.com/in/devkhant/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</html>
