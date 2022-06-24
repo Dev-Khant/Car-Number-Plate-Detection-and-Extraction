@@ -19,15 +19,23 @@ body{
     padding-top: 30px;
     padding-bottom: 30px;
 }
-input {
-    margin-top: 2vh;
-    margin-right: -5vw;
-    margin-left: 5px;
-    /* font-size: 1.1vw; */
-    border: none;
+.extracted-image{
+    float: left;
+    margin-left: 5vw;
+    width: 57vw;
+    /* height: 80vh; */
 }
-label {
-    font-size: 1.2vw;
+.plate-number{
+    margin-left: 60vw; 
+    margin-bottom: 74vh;
+}
+.plate-number p{
+    font-size: 2vw;
+    color: rgb(255, 255, 255);
+}
+h3{
+    margin-top: 1.5vh;
+    font-size: 2vw;
 } 
 img{
     margin-top: 1vh;
@@ -37,11 +45,6 @@ img{
     max-width: 56vw;
     text-decoration: none;
     border:0;
-}
-button {
-    margin-top: 2vh;
-    margin-bottom: 2vw;
-    /* font-size: 100vh; */
 }
 .footer{
     position : relative;
