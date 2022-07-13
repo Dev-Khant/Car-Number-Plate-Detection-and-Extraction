@@ -1,6 +1,9 @@
-numpy==1.23.0
+numpy==1.23.1
+opencv-python-headless==4.5.4.60
 flask==2.1.2
 werkzeug==2.1.2
-jinja2==3.0.3
-gunicorn==20.0.4
-pillow==2.6.0
+jinja2==3.1.2
+gunicorn==20.1.0
+pillow==9.2.0
+gevent==21.12.0
+easyocr==1.5.0
