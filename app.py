@@ -8,9 +8,9 @@ from flask import Flask, render_template, request, jsonify, session
 from utils.functions import get_labels, get_prediction, load_model
 from utils.extraction import crop_and_extract
 
-config_path = 'model\yolov4-custom.cfg'
-weights_path = 'model\custom.weights'
-labels_path = 'model\obj.names'
+config_path = 'model/yolov4-custom.cfg'
+weights_path = 'model/custom.weights'
+labels_path = 'model/obj.names'
 
 labels = get_labels(labels_path)    
 model = load_model(config_path, weights_path)
@@ -36,10 +36,13 @@ def predict():
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     classes, scores, boxes = get_prediction(img, model, 0.4, 0.3)
+    print('Score : ', scores)
+    print('Class : ', classes)
     for box in boxes:
         (x, y, w, h) = box
         img = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
         text = "{} : {:.2f}".format(labels[classes[0]], scores[0])
+        
         (w1, h1), _ = cv2.getTextSize(
                 text, cv2.FONT_HERSHEY_SIMPLEX, 0.7, 1)
         img = cv2.rectangle(img, (x, y - 25), (x + w1, y), (0, 0, 255), -1)
@@ -54,4 +57,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host ='0.0.0.0', port = 80)
