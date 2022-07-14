@@ -13,7 +13,7 @@ The accuracy achieved by YOLOv4 was **98.9%**.
 **Flask** is used to develop Web App along with HTML and CSS. Have also used **Docker** to containerize flask app for deployment. <br>
 Dockerized flask app is deployed on **AWS**. For deployment **EC2**, **ECR** and **ECS** are used.
 
-#### Website is Deployed [HERE](http://ec2-13-233-123-32.ap-south-1.compute.amazonaws.com/). <br><br>
+#### Website is Deployed [HERE](http://ec2-3-110-232-182.ap-south-1.compute.amazonaws.com/). <br><br>
 
 ➤ In main page first we upload the image.
 
