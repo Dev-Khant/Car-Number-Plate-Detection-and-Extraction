@@ -6,4 +6,4 @@ jinja2==3.1.2
 gunicorn==20.1.0
 pillow==9.2.0
 gevent==21.12.0
-easyocr==1.5.0
+boto3==1.24.36
