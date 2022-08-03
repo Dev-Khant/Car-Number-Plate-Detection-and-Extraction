@@ -8,11 +8,11 @@ from utils.functions import get_labels, get_prediction, load_model
 from utils.extraction import crop_and_extract
 
 config_path = 'model/yolov4-custom.cfg'
-weights_path = 'model/custom.weights'
+# weights_path = 'model/custom.weights'
 labels_path = 'model/obj.names'
 
 labels = get_labels(labels_path)    
-model = load_model(config_path, weights_path)
+model = load_model(config_path)
 app = Flask(__name__)
 
 @app.route('/')
