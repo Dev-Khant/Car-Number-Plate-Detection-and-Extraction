@@ -1,7 +1,7 @@
 import cv2
 from PIL import Image
 import numpy as np
-import easyocr
+from utils.aws_textract import process_text_detection
 
 def crop_and_extract(img, boxes):
     
@@ -22,10 +22,4 @@ def crop_and_extract(img, boxes):
 
         cv2.imwrite('dilation.png', dilation)
 
-        reader = easyocr.Reader(["en"])
-        result = reader.readtext('dilation.png')
-        if(result[0][1] == 'IND' and len(result) >= 2):
-            return result[1][1]
-        
-        return result[0][1]
-        
+    return process_text_detection('car-plate-extractor', 'dilation.png', 'ap-south-1')
