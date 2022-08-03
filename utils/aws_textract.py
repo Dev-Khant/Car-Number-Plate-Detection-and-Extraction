@@ -7,8 +7,8 @@ def process_text_detection(bucket, image_name, region):
     extractions = dict()
 
     session = boto3.Session(
-        aws_access_key_id = 'AKIAQCDD7DGQCQ5KH5VP',
-        aws_secret_access_key = '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'
+        aws_access_key_id = '',
+        aws_secret_access_key = ''
     )
 
     #Get the S3
