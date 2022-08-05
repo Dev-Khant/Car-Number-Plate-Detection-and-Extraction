@@ -48,7 +48,7 @@ def predict():
 
 
         cv2.imwrite('static/detection.png', img)
-#         text = crop_and_extract(file_path, boxes)
+        text = crop_and_extract(file_path, boxes)
     else:
         text = 'Number Plate not Detected'
     
