@@ -55,7 +55,7 @@ def predict():
     if os.path.exists(file_path):
         os.remove(file_path)
 
-    return render_template('second.html', prediction_text = 'hi', image_path = 'static/detection.png')
+    return render_template('second.html', prediction_text = f'{text}', image_path = 'static/detection.png')
 
 
 if __name__ == '__main__':
