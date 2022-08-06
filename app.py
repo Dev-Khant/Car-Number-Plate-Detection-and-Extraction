@@ -34,23 +34,23 @@ def predict():
     img = np.array(img)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-#     classes, scores, boxes = get_prediction(img, model, 0.4, 0.3)
-#     if(len(boxes) != 0):
-#         for box in boxes:
-#             (x, y, w, h) = box
-#             img = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
-#             text = "{} : {:.2f}".format(labels[classes[0]], scores[0])
+    classes, scores, boxes = get_prediction(img, model, 0.4, 0.3)
+    if(len(boxes) != 0):
+        for box in boxes:
+            (x, y, w, h) = box
+            img = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
+            text = "{} : {:.2f}".format(labels[classes[0]], scores[0])
             
-#             (w1, h1), _ = cv2.getTextSize(
-#                     text, cv2.FONT_HERSHEY_SIMPLEX, 0.7, 1)
-#             img = cv2.rectangle(img, (x, y - 25), (x + w1, y), (0, 0, 255), -1)
-#             img = cv2.putText(img, text, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,255,255), 1)
+            (w1, h1), _ = cv2.getTextSize(
+                    text, cv2.FONT_HERSHEY_SIMPLEX, 0.7, 1)
+            img = cv2.rectangle(img, (x, y - 25), (x + w1, y), (0, 0, 255), -1)
+            img = cv2.putText(img, text, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,255,255), 1)
 
 
-#         cv2.imwrite('static/detection.png', img)
-#         text = crop_and_extract(file_path, boxes)
-#     else:
-#         text = 'Number Plate not Detected'
+        cv2.imwrite('static/detection.png', img)
+        text = crop_and_extract(file_path, boxes)
+    else:
+        text = 'Number Plate not Detected'
     
     if os.path.exists(file_path):
         os.remove(file_path)
