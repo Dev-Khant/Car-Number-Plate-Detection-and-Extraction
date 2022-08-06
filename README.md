@@ -5,15 +5,15 @@ This project is about detecting number plate of a car in an image and then extra
 
 ## Model
 
-Here model used for Object Detection is **YOLOv4** from DarkNet. And the library used for extracting text is **EasyOCR**. <br>
+Here model used for Object Detection is **YOLOv4** from DarkNet. Used **AWS Textract** for extracting number from cropped image. <br>
 The accuracy achieved by YOLOv4 was **98.9%**.
 
 ## Deployment
 
 **Flask** is used to develop Web App along with HTML and CSS. Have also used **Docker** to containerize flask app for deployment. <br>
-Dockerized flask app is deployed on **AWS**. For deployment **EC2**, **ECR** and **ECS** are used.
+Dockerized flask app is deployed on **Heroku**
 
-#### Website is Deployed [HERE](http://ec2-3-110-232-182.ap-south-1.compute.amazonaws.com/). <br><br>
+#### Website is Deployed [HERE](https://detect-car-plate.herokuapp.com/). <br><br>
 
 ➤ In main page first we upload the image.
 
