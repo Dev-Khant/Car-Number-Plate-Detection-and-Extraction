@@ -11,7 +11,7 @@ The accuracy achieved by YOLOv4 was **98.9%**.
 ## Deployment
 
 **Flask** is used to develop Web App along with HTML and CSS. Have also used **Docker** to containerize flask app for deployment. <br>
-Dockerized flask app is deployed on **Heroku**
+Dockerized flask app is deployed on **Heroku**.
 
 #### Website is Deployed [HERE](https://detect-car-plate.herokuapp.com/). <br><br>
 
